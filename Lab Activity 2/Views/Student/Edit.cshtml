@@ -1,0 +1,38 @@
+﻿@model Lab_Activity_2.Models.Student
+
+<h1>Edit Student</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="FirstName">First Name:</label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last Name:</label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="GPA">GPA:</label>
+        <input asp-for="GPA" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Course">Course:</label>
+        <select asp-for="Course" class="form-control">
+            <option value="BSIT">BSIT</option>
+            <option value="BSCS">BSCS</option>
+            <option value="BSIS">BSIS</option>
+            <option value="OTHER">OTHER</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="AdmissionDate">Admission Date:</label>
+        <input asp-for="AdmissionDate" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

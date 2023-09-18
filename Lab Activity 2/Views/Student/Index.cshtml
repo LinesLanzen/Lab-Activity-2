@@ -1,0 +1,41 @@
+﻿@model List<Student>
+
+<h1>Student List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>GPA</th>
+            <th>Course</th>
+            <th>Admission Date</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.GPA</td>
+                <td>@student.Course</td>
+                <td>@student.AdmissionDate.ToShortDateString()</td>
+                <td>@student.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                    <a asp-action="ShowDetails" asp-route-id="@student.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-controller="Student" asp-action="AddStudent">
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>
+

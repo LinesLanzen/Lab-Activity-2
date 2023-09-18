@@ -1,0 +1,39 @@
+﻿@model Lab_Activity_2.Models.Student
+
+<h1>Student Details</h1>
+
+<table class="table">
+    <tr>
+        <td>ID:</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td>First Name:</td>
+        <td>@Model.FirstName</td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td>@Model.LastName</td>
+    </tr>
+    <tr>
+        <td>GPA:</td>
+        <td>@Model.GPA</td>
+    </tr>
+    <tr>
+        <td>Course:</td>
+        <td>@Model.Course</td>
+    </tr>
+    <tr>
+        <td>Admission Date:</td>
+        <td>@Model.AdmissionDate.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>@Model.Email</td>
+    </tr>
+</table>
+
+
+
+<a href="@Url.Action("Index", "Student")" class="btn btn-primary">Back to List</a>
+
